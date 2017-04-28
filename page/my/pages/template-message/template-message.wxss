@@ -1,0 +1,16 @@
+@import "../../../common/lib/weui.wxss";
+
+.show-hd {
+  padding-top: 40rpx;
+  text-align: center;
+}
+.show-logo {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+}
+.show-desc {
+  margin-top: 10rpx;
+  color: #888888;
+  font-size: 28rpx;
+}

@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "page/main/index",
+    "page/main/pages/template-message/template-message",
+    
+    "page/my/index",
+    "page/my/pages/template-message/template-message",
+    "page/my/pages/update/update"
+
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "page/main/index",
+      "iconPath": "image/icon_main.png",
+      "selectedIconPath": "image/icon_main_HL.png",
+      "text": "首页"
+    }, {
+      "pagePath": "page/my/index",
+      "iconPath": "image/icon_my.png",
+      "selectedIconPath": "image/icon_my_HL.png",
+      "text": "我的"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

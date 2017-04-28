@@ -1,0 +1,26 @@
+@import "../common/lib/weui.wxss";
+
+.kind-list-item {
+    margin: 20rpx;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    display: flex;
+}
+
+.kind-list-item-userinfo{
+    flex: 1;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.kind-list-item-nowinfo{
+    flex: 2;
+}
+.kind-list-item-userinfo-img {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+
+.kind-list-item-userinfo-nickname{
+    height: 50rpx;
+}

@@ -1,0 +1,124 @@
+
+<view class="container">
+
+  <view class="show-hd">
+    <image class="show-logo" src="{{user.avatarUrl}}"></image>
+    <view class="show-desc">{{user.nickName}}</view>
+  </view>
+
+  <form class="page-body" bindsubmit="submitForm" report-submit="true">
+    <view class="weui-cells__title">个人信息</view>
+
+    <view class="weui-cells weui-cells_after-title">
+    
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.name}}" name="name"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">性别</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.gender==0?'男':user.gender==1?'女':'保密'}}" name="gender"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">联系方式</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.contact}}" name="contact"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">毕业高中</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.highSchool==0?'昌邑一中':user.highSchool==1?'文山中学':'其他'}}" name="highSchool"></input>
+        </view>
+      </view>
+  </view>
+
+
+  <view class="weui-cells__title">本科信息</view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">本科学校</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.undergraduateSchool}}" name="undergraduateSchool"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">本科专业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.undergraduateMajor}}" name="undergraduateMajor"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">本科所在地</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.undergraduateSchoolCity}}" name="undergraduateSchoolCity"></input>
+        </view>
+      </view>
+  </view>
+
+  
+  <view class="weui-cells__title">去向信息</view>
+  
+  <view class="weui-cells weui-cells_after-title">
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">去向单位</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.nowInstitution}}" name="nowInstitution"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">去向城市</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.nowCity}}" name="nowCity"></input>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title">留言板</view>
+
+      <view class="weui-cells weui-cells_after-title">
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">说点什么吧</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" disabled="{{true}}" value="{{user.BBS}}" name="BBS"></input>
+        </view>
+      </view>
+      
+     </view>
+
+  </form>
+  
+
+</view>

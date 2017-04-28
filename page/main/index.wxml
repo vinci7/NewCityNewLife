@@ -1,0 +1,27 @@
+<view class="index">
+
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+
+          <view class="kind-list-item" bindtap="showInfo" id="{{item.objectId}}">
+
+            <view class="kind-list-item-userinfo">
+              <image class="kind-list-item-userinfo-img" src="{{item.avatarUrl}}"></image>
+              <view class="kind-list-item-userinfo-nickname">{{item.nickName}}</view>
+            </view>
+
+            <view class="kind-list-item-nowinfo">
+              <view class="kind-list-item-nowinfo-name">{{item.name}} ♂</view>
+              <view class="kind-list-item-nowinfo-undergraduateSchool">{{item.undergraduateSchool}}</view>
+              <view class="kind-list-item-nowinfo-nowInstitution">{{item.nowInstitution}}</view>
+            </view>
+
+          </view>
+
+
+      </block>
+    </view>
+
+</view>
+
+

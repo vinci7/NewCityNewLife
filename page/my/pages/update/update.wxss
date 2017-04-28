@@ -1,0 +1,16 @@
+@import "../../../common/lib/weui.wxss";
+
+.update-hd {
+  padding-top: 40rpx;
+  text-align: center;
+}
+.update-logo {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+}
+.update-desc {
+  margin-top: 10rpx;
+  color: #888888;
+  font-size: 28rpx;
+}
