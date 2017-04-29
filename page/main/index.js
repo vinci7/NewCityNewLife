@@ -16,10 +16,10 @@ Page({
       .notEqualTo('name', '')
       .notEqualTo('undergraduateSchool','')
       .notEqualTo('nowInstitution','')
+      .notEqualTo('name', null)
       .find()
       .then(list => this.setData({ list }))
       .catch(console.error);
-
   },
 
   showInfo: function (e) {

@@ -101,7 +101,6 @@ Page({
           content: '请填写姓名，本科学校，去向单位。',
           showCancel: false,
           success: function(res) {
-
           }
         })
     } else {
