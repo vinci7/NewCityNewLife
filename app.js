@@ -33,6 +33,6 @@ App({
     user: null,
     hasLogin: false,
     openid: null,
-    targetId: null
+    objectId: null
   }
 })

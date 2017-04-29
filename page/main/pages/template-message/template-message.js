@@ -3,16 +3,15 @@ const AV = require('../../../../libs/av-weapp-min.js');
 var app = getApp()
 
 Page({
-  onLoad: function() {
-    console.log('onLoad')
 
-    /*
+  onLoad: function(options) {
+    console.log('onLoad')
+    
+    //通过全局变量传参
+    //var objectId = app.globalData.targetId;
+    
     // 从 url参数 获取用户信息
     var objectId = options.objectId;
-    console.log('objectId = ', objectId);
-    */
-
-    var objectId = app.globalData.targetId;
     console.log('objectId = ', objectId);
 
     //数据绑定

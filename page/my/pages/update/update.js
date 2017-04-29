@@ -30,18 +30,18 @@ Page({
   },
 
   data: {
-    genderArray: ['男', '女', '保密'],
+    genderArray: ['保密', '男', '女'],
     genderObjectArray: [
       {
-        id: 0,
+        id: 1,
         name: '男'
       },
       {
-        id: 1,
+        id: 2,
         name: '女'
       },
       {
-        id: 2,
+        id: 0,
         name: '保密'
       }
     ],
@@ -91,49 +91,64 @@ Page({
       loading: true
     })
 
-    // LeanCloud insert
-    console.log(app.globalData.user.objectId);
-    var objectId = app.globalData.user.objectId;
+    //检查信息完整
+    if ( (formData.name == '') ||
+      (formData.undergraduateSchool == '') ||
+      (formData.nowInstitution == '') ){
+        //删除成功提醒
+        wx.showModal({
+          title: '信息不全',
+          content: '请填写姓名，本科学校，去向单位。',
+          showCancel: false,
+          success: function(res) {
 
-    var info = AV.Object.createWithoutData('_User', objectId);
-    
-    info.set('name', formData.name);
-    info.set('gender', formData.gender == '男'?0:formData.gender == '女'?1:2);
-    info.set('contact', formData.contact);
-    info.set('highSchool', formData.highSchool);
-
-    info.set('undergraduateSchool', formData.undergraduateSchool);
-    info.set('undergraduateMajor', formData.undergraduateMajor);
-    info.set('undergraduateSchoolCity', formData.undergraduateSchoolCity);
-
-    info.set('nowInstitution', formData.nowInstitution);
-    info.set('nowCity', formData.nowCity);
-
-    info.set('BBS', formData.BBS);
-
-    info.save().then(function (res) {
-      
-      //删除成功提醒
-      wx.showModal({
-        title: '提交成功',
-        showCancel: false,
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-            //关闭当前页返回上一层
-            wx.navigateBack({
-            })
           }
-        }
-      })
+        })
+    } else {
+      // LeanCloud insert
+      console.log(app.globalData.user.objectId);
+      var objectId = app.globalData.user.objectId;
 
-      console.log('objectId is ' + res.id);
-    }, function (error){
-      console.error(error);
-    });
+      var info = AV.Object.createWithoutData('_User', objectId);
+      
+      info.set('name', formData.name);
+      info.set('gender', formData.gender == '1'?1:formData.gender == '2'?2:0);
+      info.set('contact', formData.contact);
+      info.set('highSchool', formData.highSchool);
+
+      info.set('undergraduateSchool', formData.undergraduateSchool);
+      info.set('undergraduateMajor', formData.undergraduateMajor);
+      info.set('undergraduateSchoolCity', formData.undergraduateSchoolCity);
+
+      info.set('nowInstitution', formData.nowInstitution);
+      info.set('nowCity', formData.nowCity);
+
+      info.set('BBS', formData.BBS);
+
+      info.save().then(function (res) {
+        
+        //删除成功提醒
+        wx.showModal({
+          title: '提交成功',
+          showCancel: false,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              //关闭当前页返回上一层
+              wx.navigateBack({
+              })
+            }
+          }
+        })
+
+        console.log('objectId is ' + res.id);
+      }, function (error){
+        console.error(error);
+      });
+    }
+
+    
 
 
   }
 })
-
-

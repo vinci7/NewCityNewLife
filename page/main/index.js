@@ -13,6 +13,9 @@ Page({
     console.log("component/index onShow");
     new AV.Query('_User')
       .descending('createdAt')
+      .notEqualTo('name', '')
+      .notEqualTo('undergraduateSchool','')
+      .notEqualTo('nowInstitution','')
       .find()
       .then(list => this.setData({ list }))
       .catch(console.error);
@@ -21,8 +24,11 @@ Page({
 
   showInfo: function (e) {
     var objectId = e.currentTarget.id;
-    app.globalData.targetId = objectId;
-    console.log(objectId);
+    
+    //通过全局变量传参
+    //app.globalData.targetId = objectId;
+    
+    //通过options传参
     console.log('pages/template-message/template-message?objectId=' + objectId);
     wx.navigateTo({
       url: 'pages/template-message/template-message?objectId=' + objectId

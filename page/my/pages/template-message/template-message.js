@@ -4,6 +4,22 @@ var app = getApp()
 var formData = {}
 
 Page({
+
+  onShareAppMessage: function () {
+    return {
+      title: app.globalData.user.nickName+' 分享了去向信息',
+      path: '/page/main/pages/template-message/template-message?objectId='+app.globalData.user.objectId,
+      success: function(res) {
+        // 分享成功
+        console.log('分享成功');
+      },
+      fail: function(res) {
+        // 分享失败
+        console.log('分享失败');
+      }
+    }
+  },
+
   onLoad: function() {
     console.log('onLoad')
     //调用应用实例的方法获取全局数据
@@ -39,7 +55,7 @@ Page({
         var info = AV.Object.createWithoutData('_User', objectId);
         
         info.set('name', '');
-        info.set('highSchool', 2);
+        info.set('gender', 0);
         info.set('contact', '');
         info.set('highSchool', '2');
 

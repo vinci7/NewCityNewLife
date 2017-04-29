@@ -11,7 +11,7 @@
             </view>
 
             <view class="kind-list-item-nowinfo">
-              <view class="kind-list-item-nowinfo-name">{{item.name}} ♂</view>
+              <view class="kind-list-item-nowinfo-name">{{item.name}} {{item.gender==1?'♂':item.gender==2?'♀':''}}</view>
               <view class="kind-list-item-nowinfo-undergraduateSchool">{{item.undergraduateSchool}}</view>
               <view class="kind-list-item-nowinfo-nowInstitution">{{item.nowInstitution}}</view>
             </view>
