@@ -17,8 +17,18 @@ Page({
     //数据绑定
     new AV.Query('_User').get(objectId).then(user => this.setData({ user })).catch(console.error);
 
+    //修改title
+    new AV.Query('_User').get(objectId).then(
+      function(user){
+        var nickName = user.get('nickName');
+        wx.setNavigationBarTitle({
+          title: nickName + '的去向信息'
+        });
+      }).catch(console.error);
+
     //调用应用实例的方法获取全局数据
     const user = AV.User.current();
+
     //更新数据
     this.setData({
       userInfo:user
