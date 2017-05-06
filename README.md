@@ -30,6 +30,12 @@
 	
 	除gender字段为number格式，其余均为string格式。
 
+3. 在LeanCloud应用中的_User表添加如下几列:
+
+	name, gender(number), contact, highSchool, undergraduateSchool, undergraduateMajor, undergraduateSchoolCity, nowInstitution, nowCity, BBS
+	
+	除gender字段为number格式，其余均为string格式。
+
 ### 第三方SDK
 
 [在微信小程序中使用 LeanCloud](https://leancloud.cn/docs/weapp.html)
