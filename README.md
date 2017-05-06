@@ -10,18 +10,25 @@
 
 ### 配置
 
-需要自行在根目录添加配置文件config.js，示例如下
+1. 创建新的LeanCloud应用，并获取appId和appKey
+2. 在项目根目录下添加配置文件config.js，示例如下
 	
-	/**
-	 * 小程序配置文件
-	 */
+		/**
+		 * 小程序配置文件
+		 */
+		
+		var config = {
+		    appId : "Your LeanCloud application appId",
+		    appKey : "Your LeanCloud application appKey"
+		}
+		
+		module.exports = config
+
+3. 在LeanCloud应用中的_User表添加如下几列:
+
+	name, gender(number), contact, highSchool, undergraduateSchool, undergraduateMajor, undergraduateSchoolCity, nowInstitution, nowCity, BBS
 	
-	var config = {
-	    appId : "Your LeanCloud application appId",
-	    appKey : "Your LeanCloud application appKey"
-	}
-	
-	module.exports = config
+	除gender字段为number格式，其余均为string格式。
 
 ### 第三方SDK
 
